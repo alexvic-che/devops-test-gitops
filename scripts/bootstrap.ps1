@@ -1,3 +1,8 @@
+if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
+    Write-Host "Run install.ps1 first."
+    exit
+}
+
 $ClusterName = "devops-test"
 
 Write-Host "=== DevOps Test Bootstrap ==="
