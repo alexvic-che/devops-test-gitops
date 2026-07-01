@@ -1,0 +1,14 @@
+image:
+  repository: postgres
+  tag: "16-alpine"
+
+database:
+  name: app_db
+  user: app_user
+  password: app_password
+
+service:
+  port: 5432
+
+persistence:
+  size: 1Gi
