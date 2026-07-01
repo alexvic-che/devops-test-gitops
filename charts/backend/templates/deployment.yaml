@@ -21,11 +21,13 @@ spec:
           args:
             - python manage.py migrate && gunicorn config.wsgi:application --bind 0.0.0.0:8000
 
+          envFrom:
+            - configMapRef:
+                name: backend-config
+            - secretRef:
+                name: backend-secret
+
           env:
-            - name: POSTGRES_HOST
-              value: postgres
-            - name: POSTGRES_PORT
-              value: "5432"
             - name: POSTGRES_DB
               valueFrom:
                 secretKeyRef:

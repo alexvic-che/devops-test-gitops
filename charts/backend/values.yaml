@@ -8,3 +8,12 @@ image:
 service:
   type: ClusterIP
   port: 8000
+
+config:
+  DEBUG: "False"
+  ALLOWED_HOSTS: "*"
+  POSTGRES_HOST: "postgres"
+  POSTGRES_PORT: "5432"
+
+secret:
+  DJANGO_SECRET_KEY: "devops-test-secret-key"
